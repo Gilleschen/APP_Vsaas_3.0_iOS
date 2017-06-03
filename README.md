@@ -1,4 +1,4 @@
-# APP_Vsaas_3.0_iOS 使用說明
+# APP_Vsaas_3.0_iOS 登入介面自動化測試使用說明
 
 #### 步驟：
 
@@ -15,3 +15,6 @@
 
 
 =================================================================================
+
+Ant Target:
+Login_Junit, CreateAccount_Junit, ForgotPassword_Junit
