@@ -45,7 +45,7 @@ public class method {
 				System.out.println("[Error log] " + "Device Information:" + app.cap[i]);
 				System.out.println("[Error log ]" + "Expect Result:" + arrayList.toString());
 				ScreenShoot(i, methodname);
-				sleep(4);//wait for screenshoot
+				sleep(4);// wait for screenshoot
 			}
 			QuitDriver();
 		}
@@ -97,9 +97,9 @@ public class method {
 		try {
 
 			wait[i].until(ExpectedConditions.presenceOfElementLocated(By.id(element)));
-			wait[i].until(ExpectedConditions.elementToBeClickable((By.id(element))));
+			// wait[i].until(ExpectedConditions.elementToBeClickable((By.id(element))));
 		} catch (Exception ex) {
-			System.out.println("MethodName:" + this.getClass().getName() + "." + methodname);
+			System.out.println("MethodName:" + methodname);
 			System.out.println("Not found " + element);
 		}
 	}
@@ -108,9 +108,9 @@ public class method {
 		try {
 
 			wait[i].until(ExpectedConditions.presenceOfElementLocated(By.xpath(element)));
-			wait[i].until(ExpectedConditions.elementToBeClickable((By.xpath(element))));
+			// wait[i].until(ExpectedConditions.elementToBeClickable((By.xpath(element))));
 		} catch (Exception ex) {
-			System.out.println("MethodName:" + this.getClass().getName() + "." + methodname);
+			System.out.println("MethodName:" + methodname);
 			System.out.println("Not found " + element);
 		}
 	}
