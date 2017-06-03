@@ -12,3 +12,6 @@
 	![image](https://github.com/Gilleschen/APP_Vsaas_3.0_iOS/blob/master/picture/device.png)
 	
 4. 將StringTable.xls放置c槽 (路徑：c:\StringTable.xls)
+
+
+===============================================================================================
