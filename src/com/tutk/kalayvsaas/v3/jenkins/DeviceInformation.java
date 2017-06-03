@@ -26,10 +26,10 @@ public class DeviceInformation {
 			cap[i].setCapability(SeeTestCapabilityType.WAIT_FOR_DEVICE_TIMEOUT_MILLIS, def.sec * 1000);
 			cap[i].setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 30);
 			
-			
-			cap[i].setCapability(SeeTestCapabilityType.REPORT_FORMAT, "html");
-			cap[i].setCapability(SeeTestCapabilityType.TEST_NAME, "Vsaas 3.0 iOS Test Report");
-			cap[i].setCapability(SeeTestCapabilityType.REPORT_DIRECTORY, "c:\\reports\\"); 
+			//Report
+			//cap[i].setCapability(SeeTestCapabilityType.REPORT_FORMAT, "html");
+			//cap[i].setCapability(SeeTestCapabilityType.TEST_NAME, "Vsaas 3.0 iOS Test Report");
+			//cap[i].setCapability(SeeTestCapabilityType.REPORT_DIRECTORY, "c:\\reports\\"); 
 			
 			// cap[i].setCapability(SeeTestCapabilityType.REPORT_FORMAT,
 			// "html");
