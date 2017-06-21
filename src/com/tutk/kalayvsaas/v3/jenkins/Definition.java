@@ -9,6 +9,7 @@ public class Definition {
 	ArrayList<String> DeviceUDID = infor.deviceName;// DeviceUDID
 	int port = 8889;// Appium studio port number
 	int sec = 60;// 等待時間
+	int iterative = 2;// LiveView功能測試次數
 
 	String id_email = "//*[@placeholder='Email']";
 	String id_password = "//*[@placeholder='Password']";
@@ -40,5 +41,16 @@ public class Definition {
 
 	String btn_AddDevice = "//*[@name='Add']";
 	String btn_QRCode = "//*[@name='QR Code']";
+
+	// 瀑布流
+	String tvConnection = "//*[@name='Online']";
+
+	// LiveView
+	String back = "//*[@name='btn back n']";
+	String btnListener = "//*[@name='btn tb mute n']";
+	String btnMute = "//*[@name='btn tb sound n']";
+	String btnSpeaker = "//*[@name='btn tb talking n']";
+	String btnRecording = "//*[@name='btn tb record n']";
+	String btnStopRecordin = "//*[@name='btn tb record h']";
 
 }

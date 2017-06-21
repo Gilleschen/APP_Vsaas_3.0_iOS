@@ -8,42 +8,42 @@ public class CreateAccount_Junit {
 
 	CreateAccount_TestCase testcase = new CreateAccount_TestCase();
 
-	@Test
+	//@Test
 	public void CreateAccount() {
 		assertTrue(testcase.CreateAccount());
 	}
 
-	@Test
+	//@Test
 	public void InvaliedEmail() {
 		assertTrue(testcase.InvaliedEmail());
 	}
 
-	@Test
+	//@Test
 	public void ExistedAccount() {
 		assertTrue(testcase.ExistedAccount());
 	}
 
-	@Test
+	//@Test
 	public void EmailBlank() {
 		assertTrue(testcase.EmailBlank());
 	}
 
-	@Test
+	//@Test
 	public void ConfirmPwdBlank() {
 		assertTrue(testcase.ConfirmPwdBlank());
 	}
 
-	@Test
+	//@Test
 	public void NewPwdBlank() {
 		assertTrue(testcase.NewPwdBlank());
 	}
 
-	@Test
+	//@Test
 	public void NewPwdAndConfirmPwdNotMatch() {
 		assertTrue(testcase.NewPwdAndConfirmPwdNotMatch());
 	}
 
-	@Test
+	//@Test
 	public void NicknameBlank() {
 		assertTrue(testcase.NicknameBlank());
 	}
@@ -53,7 +53,7 @@ public class CreateAccount_Junit {
 		assertTrue(testcase.DonotCheckTermsofUser());
 	}
 
-	@Test
+	//@Test
 	public void WrongPwdRule() {
 		assertTrue(testcase.WrongPwdRule());
 	}
