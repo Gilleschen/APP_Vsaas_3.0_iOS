@@ -51,6 +51,15 @@ Login_Junit, CreateAccount_Junit, ForgotPassword_Junit, LiveView_Junit
 	2. InvalidEmail
 	3. ForgotPwd
 	
+#### D. LiveView (LiveView_Junit)
+	1. Portrait/Landscape模式
+	 1.1 Listener
+	 1.2 Speaker
+	 1.3 Recording
+	 1.4 Snapshot
+	 1.5 Brightness
+	 1.6 Contrast
+	
 ===============================================================================
 
 #### 建立測試期望結果
