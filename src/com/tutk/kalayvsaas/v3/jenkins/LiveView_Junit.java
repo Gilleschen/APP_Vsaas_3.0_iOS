@@ -12,13 +12,14 @@ public class LiveView_Junit {
 	public void setUp() throws Exception {
 		testcase.EnterLiveview();
 	}
+	
 
-	//@Test
+	@Test
 	public void Listener() {
 		assertTrue(testcase.Listener());
 	}
 
-	//@Test
+	@Test
 	public void Speaker() {
 		assertTrue(testcase.Speaker());
 	}
@@ -27,27 +28,27 @@ public class LiveView_Junit {
 	public void Recording() {
 		assertTrue(testcase.Recording());
 	}
-	/*
+	
 	@Test
 	public void Snapshot() {
 		assertTrue(testcase.Snapshot());
 	}
-
+	
 	@Test
 	public void Brightness() {
 		assertTrue(testcase.Brightness());
 	}
-
+	
 	@Test
 	public void Contrast() {
 		assertTrue(testcase.Contrast());
 	}
-
+	/*
 	@Test
 	public void Cloud() {
 		assertTrue(testcase.Cloud());
-	}
-
+	}*/
+	
 	@Test
 	public void LandScape_Listener() {
 		assertTrue(testcase.LandScape_Listener());
@@ -62,12 +63,12 @@ public class LiveView_Junit {
 	public void LandScape_Recording() {
 		assertTrue(testcase.LandScape_Recording());
 	}
-
+	
 	@Test
 	public void LandScape_Snapshot() {
 		assertTrue(testcase.LandScape_Snapshot());
 	}
-
+	
 	@Test
 	public void LandScape_Brightness() {
 		assertTrue(testcase.LandScape_Brightness());
@@ -77,5 +78,5 @@ public class LiveView_Junit {
 	public void LandScape_Contrast() {
 		assertTrue(testcase.LandScape_Contrast());
 	}
-*/
+
 }

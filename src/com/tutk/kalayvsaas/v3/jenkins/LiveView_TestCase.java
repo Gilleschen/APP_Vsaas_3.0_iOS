@@ -25,19 +25,9 @@ public class LiveView_TestCase {
 			method.app.driver[i].rotate(ScreenOrientation.PORTRAIT);
 			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
 			for (int j = 0; j < method.app.def.iterative; j++) {
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
+				method.sleep(3);
 				method.app.driver[i].findElement(By.xpath(method.app.def.btnListener)).click();
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
+				method.sleep(3);
 				method.app.driver[i].findElement(By.xpath(method.app.def.btnMute)).click();
 			}
 			resultelement[i] = true;
@@ -59,12 +49,7 @@ public class LiveView_TestCase {
 			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
 			
 			for (int j = 0; j < method.app.def.iterative; j++) {
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
+				method.sleep(3);
 				 method.app.driver[i].findElement(By.xpath(method.app.def.btnSpeaker)).click();
 				
 			}
@@ -85,22 +70,13 @@ public class LiveView_TestCase {
 			method.app.driver[i].rotate(ScreenOrientation.PORTRAIT);
 			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
 			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.xpath(method.app.def.btnRecording)));
+			method.sleep(3);
 			method.app.driver[i].findElement(By.xpath(method.app.def.btnRecording)).click();
 			for (int j = 0; j < method.app.def.iterative; j++) {
 			
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
+				method.sleep(3);
 				method.app.driver[i].findElement(By.xpath(method.app.def.btnListener)).click();
-				try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-					
-					e.printStackTrace();
-				}
+				method.sleep(3);
 				method.app.driver[i].findElement(By.xpath(method.app.def.btnMute)).click();
 			}
 			method.app.driver[i].findElement(By.xpath(method.app.def.btnStopRecordin)).click();
@@ -111,101 +87,100 @@ public class LiveView_TestCase {
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-	/*
+	
 	public boolean Snapshot() {
 
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
 		for (int i = 0; i < method.app.driver.length; i++) {
 			resultelement[i] = false;
-			// TouchAction t = new TouchAction(app.driver[i]);
+			
 			method.app.driver[i].rotate(ScreenOrientation.PORTRAIT);
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
 
 			for (int j = 0; j < method.app.def.iterative; j++) {
 
-				// t.tap(app.driver[i].findElement(By.id(def.btnSnapshot))).perform();
-				method.app.driver[i].findElement(By.id(method.app.def.btnSnapshot)).click();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnSnapshot)).click();
 			}
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();;
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean Brightness() {
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		Random rand = new Random();
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
-		String btnlist[] = { method.app.def.btnLowest, method.app.def.btnLow, method.app.def.btnMid,
-				method.app.def.btnHigh, method.app.def.btnHighest };
+		String btnlist[] = { method.app.def.BrightnessbtnLowest, method.app.def.BrightnessbtnLow, method.app.def.BrightnessbtnMid,
+				method.app.def.BrightnessbtnHigh, method.app.def.BrightnessbtnHighest };
 		// EnterLiveview();
 		for (int i = 0; i < method.app.driver.length; i++) {
 
 			resultelement[i] = false;
 			method.app.driver[i].rotate(ScreenOrientation.PORTRAIT);
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
-			method.app.driver[i].findElement(By.id(method.app.def.btnBrightness)).click();
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
-
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnBrightness)).click();
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.xpath(method.app.def.BrightnessbtnLowest)));
+			method.sleep(3);
 			for (int j = 0; j < btnlist.length; j++) {
 
-				method.app.driver[i].findElement(By.id(btnlist[j])).click();
+				method.app.driver[i].findElement(By.xpath(btnlist[j])).click();
 			}
-
+		
 			System.out.println("MethodName：" + this.getClass().getName() + "." + methodname);
 
 			for (int j = 0; j < method.app.def.iterative; j++) {
 				String e = btnlist[rand.nextInt(btnlist.length)];
-				method.app.driver[i].findElement(By.id(e)).click();
+				method.app.driver[i].findElement(By.xpath(e)).click();
 				System.out.println(
 						"DeviceName： " + method.app.cap[i].getCapability("deviceName") + " Step " + (j + 1) + " " + e);
 			}
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
+			
 			resultelement[i] = true;
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean Contrast() {
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		Random rand = new Random();
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
-		String btnlist[] = { method.app.def.btnLowest, method.app.def.btnLow, method.app.def.btnMid,
-				method.app.def.btnHigh, method.app.def.btnHighest };
+		String btnlist[] = { method.app.def.ContrastbtnLowest, method.app.def.ContrastbtnLow, method.app.def.ContrastbtnMid,
+				method.app.def.ContrastbtnHigh, method.app.def.ContrastbtnHighest };
 		// EnterLiveview();
 		for (int i = 0; i < method.app.driver.length; i++) {
 
 			resultelement[i] = false;
 			method.app.driver[i].rotate(ScreenOrientation.PORTRAIT);
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
-			method.app.driver[i].findElement(By.id(method.app.def.btnContrast)).click();
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
-
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.tv)));
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnContrast)).click();
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
+			method.sleep(3);
 			for (int j = 0; j < btnlist.length; j++) {
 
-				method.app.driver[i].findElement(By.id(btnlist[j])).click();
+				method.app.driver[i].findElement(By.xpath(btnlist[j])).click();
 			}
 
 			System.out.println("MethodName：" + this.getClass().getName() + "." + methodname);
 
 			for (int j = 0; j < method.app.def.iterative; j++) {
 				String e = btnlist[rand.nextInt(btnlist.length)];
-				method.app.driver[i].findElement(By.id(e)).click();
+				method.app.driver[i].findElement(By.xpath(e)).click();
 				System.out.println(
 						"DeviceName： " + method.app.cap[i].getCapability("deviceName") + " Step " + (j + 1) + " " + e);
 			}
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 			resultelement[i] = true;
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	/*
 	public boolean Cloud() {
 
 		boolean resultelement[] = new boolean[method.app.driver.length];
@@ -252,7 +227,7 @@ public class LiveView_TestCase {
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+*/
 	public boolean LandScape_Listener() {
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
@@ -261,124 +236,128 @@ public class LiveView_TestCase {
 			TouchAction t = new TouchAction(method.app.driver[i]);
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
+			
 			for (int j = 0; j < method.app.def.iterative; j++) {
-				t.press(method.app.driver[i].findElement(By.id(method.app.def.btnListener))).perform();
-				t.release().perform();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnListener)).click();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnMute)).click();
 			}
+			
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean LandScape_Speaker() {
 
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
 		for (int i = 0; i < method.app.driver.length; i++) {
 			resultelement[i] = false;
-			// TouchAction t = new TouchAction(app.driver[i]);
-			// Wait_Element(def.tv, i, methodname);
+			
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
 
-			WebElement e = method.app.driver[i].findElement(By.id(method.app.def.btnSpeaker));
+			
 			for (int j = 0; j < method.app.def.iterative; j++) {
-				// multiTouch.add(t.tap(e)).add(t2.tap(e2)).perform();
-				e.click();
-				// app.driver[i].findElement(By.id(def.btnListener)).click();
-				// t.tap(app.driver[i].findElement(By.id(def.btnListener))).perform();
-				// t.press(e).perform();
-				// t.release().perform();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnSpeaker)).click();
+				
 			}
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean LandScape_Recording() {
 
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
-		// EnterLiveview();
 
 		for (int i = 0; i < method.app.driver.length; i++) {
 			resultelement[i] = false;
-			// TouchAction t = new TouchAction(app.driver[i]);
+			
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
-			// t.tap(app.driver[i].findElement(By.id(def.btnRecording))).perform();
+			
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
-			method.app.driver[i].findElement(By.id(method.app.def.btnRecording)).click();
+			method.sleep(3);
+			
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnRecording)).click();
+			
 			for (int j = 0; j < method.app.def.iterative; j++) {
-				// t.tap(app.driver[i].findElement(By.id(def.btnListener))).perform();
-				method.app.driver[i].findElement(By.id(method.app.def.btnListener)).click();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnListener)).click();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnMute)).click();
 
 			}
-			method.app.driver[i].findElement(By.id(method.app.def.btnRecording)).click();
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnStopRecordin)).click();
 			// t.tap(app.driver[i].findElement(By.id(def.btnRecording))).perform();
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean LandScape_Snapshot() {
 
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
 		for (int i = 0; i < method.app.driver.length; i++) {
 			resultelement[i] = false;
-			// TouchAction t = new TouchAction(app.driver[i]);
+			
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
 			for (int j = 0; j < method.app.def.iterative; j++) {
 
-				// t.tap(app.driver[i].findElement(By.id(def.btnSnapshot))).perform();
-				method.app.driver[i].findElement(By.id(method.app.def.btnSnapshot)).click();
+				method.sleep(3);
+				method.app.driver[i].findElement(By.xpath(method.app.def.btnSnapshot)).click();
 			}
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-
+	
 	public boolean LandScape_Brightness() {
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		Random rand = new Random();
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
-		String btnlist[] = { method.app.def.btnLowest, method.app.def.btnLow, method.app.def.btnMid,
-				method.app.def.btnHigh, method.app.def.btnHighest };
+		String btnlist[] = { method.app.def.BrightnessbtnLowest, method.app.def.BrightnessbtnLow, method.app.def.BrightnessbtnMid,
+				method.app.def.BrightnessbtnHigh, method.app.def.BrightnessbtnHighest };
 
 		for (int i = 0; i < method.app.driver.length; i++) {
 
 			resultelement[i] = false;
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
-			method.app.driver[i].findElement(By.id(method.app.def.btnBrightness)).click();
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
-
+			method.sleep(3);
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnBrightness)).click();
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
+			method.sleep(3);
 			for (int j = 0; j < btnlist.length; j++) {
 
-				method.app.driver[i].findElement(By.id(btnlist[j])).click();
+				method.app.driver[i].findElement(By.xpath(btnlist[j])).click();
 			}
 
 			System.out.println("MethodName：" + this.getClass().getName() + "." + methodname);
 
 			for (int j = 0; j < method.app.def.iterative; j++) {
 				String e = btnlist[rand.nextInt(btnlist.length)];
-				method.app.driver[i].findElement(By.id(e)).click();
+				method.app.driver[i].findElement(By.xpath(e)).click();
 				System.out.println(
 						"DeviceName： " + method.app.cap[i].getCapability("deviceName") + " Step " + (j + 1) + " " + e);
 			}
 
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
@@ -388,39 +367,39 @@ public class LiveView_TestCase {
 		boolean resultelement[] = new boolean[method.app.driver.length];
 		Random rand = new Random();
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
-		String btnlist[] = { method.app.def.btnLowest, method.app.def.btnLow, method.app.def.btnMid,
-				method.app.def.btnHigh, method.app.def.btnHighest };
+		String btnlist[] = { method.app.def.BrightnessbtnLowest, method.app.def.BrightnessbtnLow, method.app.def.BrightnessbtnMid,
+				method.app.def.BrightnessbtnHigh, method.app.def.BrightnessbtnHighest };
 		for (int i = 0; i < method.app.driver.length; i++) {
 
 			resultelement[i] = false;
 			// wait[i].until(ExpectedConditions.elementToBeClickable(By.id(def.tv)));
 			method.app.driver[i].rotate(ScreenOrientation.LANDSCAPE);
-			method.app.driver[i].findElement(By.id(method.app.def.btnContrast)).click();
-			method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
-
+			method.sleep(3);
+			method.app.driver[i].findElement(By.xpath(method.app.def.btnContrast)).click();
+			//method.wait[i].until(ExpectedConditions.elementToBeClickable(By.id(method.app.def.btnLowest)));
+			method.sleep(3);
 			for (int j = 0; j < btnlist.length; j++) {
 
-				method.app.driver[i].findElement(By.id(btnlist[j])).click();
+				method.app.driver[i].findElement(By.xpath(btnlist[j])).click();
 			}
 
 			System.out.println("MethodName：" + this.getClass().getName() + "." + methodname);
 
 			for (int j = 0; j < method.app.def.iterative; j++) {
 				String e = btnlist[rand.nextInt(btnlist.length)];
-				method.app.driver[i].findElement(By.id(e)).click();
+				method.app.driver[i].findElement(By.xpath(e)).click();
 				System.out.println(
 						"DeviceName： " + method.app.cap[i].getCapability("deviceName") + " Step " + (j + 1) + " " + e);
 			}
 
 			resultelement[i] = true;
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
-			method.app.driver[i].pressKeyCode(AndroidKeyCode.BACK);
+			method.app.driver[i].findElement(By.xpath(method.app.def.back)).click();
 		}
 		method.QuitDriver();
 		return method.result(resultelement, methodname);
 	}
-*/
-	void EnterLiveview() {
+
+	public void EnterLiveview() {
 
 		String methodname = Thread.currentThread().getStackTrace()[1].getMethodName();
 		for (int i = 0; i < method.app.driver.length; i++) {
@@ -434,19 +413,11 @@ public class LiveView_TestCase {
 
 				if (targetEle.getText().contains("已連線") == true || targetEle.getText().contains("Online") == true
 						|| targetEle.getText().contains("在线") == true) {
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						;
-					}
+					method.sleep(3);
 					targetEle.click();
 					break;
 				} else {
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						;
-					}
+					method.sleep(3);
 					j = 0;
 					tvConnection.clear();
 					tvConnection = method.app.driver[i].findElementsById(method.app.def.tvConnection);

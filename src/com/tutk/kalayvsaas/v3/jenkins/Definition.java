@@ -52,5 +52,17 @@ public class Definition {
 	String btnSpeaker = "//*[@name='btn tb talking n']";
 	String btnRecording = "//*[@name='btn tb record n']";
 	String btnStopRecordin = "//*[@name='btn tb record h']";
-
+	String btnSnapshot = "//*[@name='btn tb shot n']";
+	String btnBrightness = "//*[@name='btn tb brightness n']";
+	String BrightnessbtnLowest = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[1]";
+	String BrightnessbtnLow = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[2]";
+	String BrightnessbtnMid = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[3]";
+	String BrightnessbtnHigh = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[4]";
+	String BrightnessbtnHighest = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[5]";
+	String btnContrast = "//*[@name='btn tb contrast n']";
+	String ContrastbtnLowest = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[1]";
+	String ContrastbtnLow = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[2]";
+	String ContrastbtnMid = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[3]";
+	String ContrastbtnHigh = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[4]";
+	String ContrastbtnHighest = "(//*[@class='UIAView' and ./parent::*[@class='UIAView' and ./preceding-sibling::*[@class='UIAScrollView'] and ./parent::*[@class='UIAView']]]/*[@class='UIAButton'])[5]";
 }
