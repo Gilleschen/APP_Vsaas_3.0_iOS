@@ -19,7 +19,7 @@
 ===============================================================================
 
 #### Ant Target:
-Login_Junit, CreateAccount_Junit, ForgotPassword_Junit
+Login_Junit, CreateAccount_Junit, ForgotPassword_Junit, LiveView_Junit
 
 ===============================================================================
 
