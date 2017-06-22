@@ -15,6 +15,10 @@
 
 5. 設定測試手機為英文語系
 
+6. 安裝Appium studio (https://experitest.com/appium-studio/)
+
+7. 新增測試手機至Appium studio並啟動手機 (請參考 ![Getting started](https://docs.experitest.com/display/public/AS/Getting+started))
+
 
 ===============================================================================
 
