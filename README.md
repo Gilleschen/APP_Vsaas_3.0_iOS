@@ -17,7 +17,7 @@
 
 6. 安裝Appium studio (https://experitest.com/appium-studio/)
 
-7. 新增測試手機至Appium studio並啟動手機 (請參考<a href="https://docs.experitest.com/display/public/AS/Getting+started">Getting started</a>)
+7. 新增測試手機至Appium studio並啟動手機 (請參考<a href="https://docs.experitest.com/display/public/AS/iOS+-+Build+your+first+test">Getting started</a>)
 
 ===============================================================================
 
